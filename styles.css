@@ -63,14 +63,77 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+h1{
+    font-size: 2rem;
+}
+
+h2{
+    font-size: 2rem;
+    font-weight: bold;
+}
+
+h3{
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
 header{
     background-color: var(--black);
     color: var(--blue);
 }
 
+header a{
+    text-decoration: none;
+    color: var(--blue);
+    text-transform: uppercase;
+}
+
+#expertise{
+    background-color: var(--white);
+    color: var(--black);
+}
+
+#offer{
+    background-color: var(--white);
+}
+
+#offer section{
+    background-color: var(--blue);
+    color: var(--white);
+    padding: 40px;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+#results{
+    background-color: var(--blue);
+    color: var(--white);
+}
+
+#contact{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+input[type^=submit]{
+    color: var(--white);
+    background-color: var(--blue);
+}
+
+footer{
+    background-color: var(--black);
+    color: var(--white);
+}
+
+footer p:nth-of-type(3){
+    text-decoration: none;
+    color: var(--white);
+}
+
 /* MIN-WIDTH OF THE PAGE SHOULD NOT GO BELOW 400PX */
 body{
     min-width: 400px;
+    font-family: var(--font);
 }
 
 /* ADD A DIV WITH THE CLASS OF CONTAINER TO EVERY CONTENT CONTAINER THIS IS ALLOW THE BASE ELEMENTS TO BE 100% WIDTH, BUT CONSTRAIN THE ACTUAL CONTENT TO 90% */
@@ -89,6 +152,14 @@ body{
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: var(--white);
+}
+
+#innovation p:nth-of-type(2){
+    background-color: var(--blue);
+    border-radius: 5px;
+    padding: 20px 40px;
+    font-weight: bold;
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
