@@ -65,6 +65,7 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 h1{
     font-size: 2rem;
+    font-weight: bold;
 }
 
 h2{
@@ -78,12 +79,29 @@ h2:not(#innovation h2){
 
 h3{
     font-size: 1.5rem;
-    font-weight: bold   ;
+    font-weight: bold;
 }
 
 header{
     background-color: var(--black);
     color: var(--blue);
+    display: grid;
+    grid-template-areas: "logo title nav";
+    padding: 40px 0px;
+}
+
+header svg{
+    grid-area: "logo";
+    padding-left: 40px;
+}
+
+header h1{
+    grid-area: "title";
+    place-content: center;
+}
+
+header nav{
+    grid-area: "nav";
 }
 
 header a{
@@ -111,6 +129,10 @@ header a{
     padding-bottom: 40px;
 }
 
+#offer h2{
+    padding: 20px 0px;
+}
+
 #offer section{
     background-color: var(--blue);
     color: var(--white);
@@ -122,6 +144,42 @@ header a{
 #results{
     background-color: var(--blue);
     color: var(--white);
+    padding: 25px 0px;
+}
+
+#results p{
+    padding-left: 20px;
+    padding: 20px 20px;
+}
+
+#results h3{
+    padding-left: 40px;
+}
+
+#results table{
+    margin: 20px 0px 20px 20px;
+}
+
+#results table, #results th, #results td{
+    border: 1px solid var(--charcoal);
+}
+
+#results th, #results td{
+    text-align: center;
+    padding: 20px;
+}
+
+#results th{
+    background-color: var(--black);
+    font-weight: bold;
+}
+
+#results tr:nth-child(even){
+    background-color: var(--black);
+}
+
+#results tr:nth-child(odd){
+    background-color: var(--charcoal);
 }
 
 #contact{
@@ -137,6 +195,12 @@ input[type^=submit]{
 footer{
     background-color: var(--black);
     color: var(--white);
+    padding: 40px 0px;
+    text-align: center;
+}
+
+footer p{
+    margin: 5px;
 }
 
 footer p:nth-of-type(3){
@@ -166,6 +230,11 @@ body{
     text-align: center;
     padding: 1rem;
     overflow: hidden;
+    color: var(--white);
+}
+
+#innovation a{
+    text-decoration: none;
     color: var(--white);
 }
 
