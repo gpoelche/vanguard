@@ -63,9 +63,36 @@ table {
 }
 
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
+@keyframes headerLoad{
+    from{
+        translate: 0 -2vw;
+        opacity: 0%;
+    }
+
+    to{
+        translate: 0 0;
+        opacity: 100%;
+    }
+}
+
+@keyframes svgBounce{
+    from{
+        translate: 0 0;
+    }
+
+    to{
+        translate: 0 10px;
+    }
+}
+
+p{
+    line-height: 1.5;
+}
+
 h1{
     font-size: 2rem;
     font-weight: bold;
+    place-content: center;
 }
 
 h2{
@@ -82,26 +109,21 @@ h3{
     font-weight: bold;
 }
 
+h2, h3{
+    animation-name: headerLoad;
+    animation-duration: 1s;
+}
+
 header{
     background-color: var(--black);
     color: var(--blue);
-    display: grid;
-    grid-template-areas: "logo title nav";
     padding: 40px 0px;
+    border-bottom: 3px solid var(--blue);
 }
 
-header svg{
-    grid-area: "logo";
-    padding-left: 40px;
-}
-
-header h1{
-    grid-area: "title";
-    place-content: center;
-}
-
-header nav{
-    grid-area: "nav";
+header div{
+    display: flex;
+    flex-direction: row;
 }
 
 header a{
@@ -110,8 +132,52 @@ header a{
     text-transform: uppercase;
 }
 
+/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
+#innovation{
+    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
+    height: 80vh;
+    display: grid;
+    place-items: center;
+    text-align: center;
+    padding: 1rem;
+    overflow: hidden;
+    color: var(--white);
+}
+
+#innovation a{
+    text-decoration: none;
+    color: var(--white);
+}
+
+#innovation div div{
+    background-color: rgba(200, 200, 200, 0.05);
+    backdrop-filter: blur(2px);
+    padding: 20px 20px;
+    border-radius: 10px;
+}
+
+#innovation p:nth-of-type(1){
+    margin: 20px 0px;
+}
+
+#innovation p:nth-of-type(2){
+    background-color: var(--blue);
+    border-radius: 5px;
+    padding: 20px 30px;
+    font-weight: bold;
+    display: inline-block;
+    transition: background-color 0.5s, scale 0.5s ease-in-out;
+}
+
+#innovation p:nth-of-type(2):hover{
+    background-color: var(--red);
+    scale: 105%;
+    transition: background-color 0.5s, scale 0.5s ease-in-out;
+}
+
 #expertise{
     background-color: var(--white);
+    scale: 105%;
     color: var(--black);
     padding: 30px 0px;
 }
@@ -136,9 +202,17 @@ header a{
 #offer section{
     background-color: var(--blue);
     color: var(--white);
-    padding: 40px;
+    padding: 30px 20px;
     margin: 15px 20px;
     border-radius: 10px;
+}
+
+#offer section p{
+    padding-top: 20px;
+}
+
+#offer h3{
+    padding-left: 10px;
 }
 
 #results{
@@ -153,11 +227,13 @@ header a{
 }
 
 #results h3{
+    padding-top: 20px;
+    padding-bottom: 20px;
     padding-left: 40px;
 }
 
 #results table{
-    margin: 20px 0px 20px 20px;
+    margin: 20px auto;
 }
 
 #results table, #results th, #results td{
@@ -185,17 +261,55 @@ header a{
 #contact{
     background-color: var(--black);
     color: var(--white);
+    padding-top: 40px;
+}
+
+#contact p{
+    padding: 20px 0px 20px 20px;
+}
+
+#contact form{
+    display: flex;
+    flex-direction: column;
+}
+
+#contact label{
+    padding-left: 20px;
+}
+
+.contact{
+    width: 400px;
+    margin: 5px 0px 20px 20px;
+    border: 2px solid var(--blue);
+}
+
+.contact:not(textarea){
+    line-height: 40px;
+    font-size: 1.15rem;
 }
 
 input[type^=submit]{
     color: var(--white);
     background-color: var(--blue);
+    font-weight: bold;
+    padding: 15px;
+    border-radius: 10px;
+    font-family: var(--font);
+    font-size: 1.25rem;
+    margin: 20px 20px 0px;
+    transition: background-color 0.5s, scale 0.5s ease-in-out;
+}
+
+input[type^=submit]:hover{
+    background-color: var(--red);
+    scale: 105%;
+    transition: background-color 0.5s, scale 0.5s ease-in-out;
 }
 
 footer{
     background-color: var(--black);
     color: var(--white);
-    padding: 40px 0px;
+    padding: 50px 0px;
     text-align: center;
 }
 
@@ -221,51 +335,14 @@ body{
     margin: 0 auto;
 }
 
-/* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
-#innovation{
-    background: linear-gradient(rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0.75)), url('images/vanguard-hero.jpg') no-repeat center center/cover;
-    height: 80vh;
-    display: grid;
-    place-items: center;
-    text-align: center;
-    padding: 1rem;
-    overflow: hidden;
-    color: var(--white);
-}
-
-#innovation a{
-    text-decoration: none;
-    color: var(--white);
-}
-
-#innovation div{
-    background-color: rgba(200, 200, 200, 0.05);
-    backdrop-filter: blur(2px);
-    padding: 20px 20px;
-    border-radius: 10px;
-}
-
-#innovation p:nth-of-type(1){
-    margin: 20px 0px;
-}
-
-#innovation p:nth-of-type(2){
-    background-color: var(--blue);
-    border-radius: 5px;
-    padding: 20px 30px;
-    font-weight: bold;
-    display: inline-block;
-}
-
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
 header svg{
     content: "";
-
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
     background: url('images/vanguard-logo.svg') no-repeat center/contain;
-
+    animation: 3s alternate infinite svgBounce;
 }
 /* THIS ONE IS DONE FOR YOU */
 #bar-chart {
@@ -286,7 +363,7 @@ header svg{
     background: var(--charcoal);
     border-radius: 10px;
     position: relative;
-    transition: ;
+    transition: height 1s;
     height: 0;
 }
 /* THIS ONE IS DONE FOR YOU */
@@ -329,9 +406,86 @@ header svg{
     .bar-chart {
         width: 50%;
     }
+
+    #offer div{
+        display: grid;
+        grid-template-areas: "head head"
+                             "one two"
+                             "three four"
+                             "five six";
+    }
+
+    #offer h2{
+        grid-area: head;
+    }
+
+    #offer section{
+        margin: 8px;
+    }
+
+    #offer section:first-of-type{
+        grid-area: one;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: two;
+    }
+
+    #offer section:nth-of-type(3){
+        grid-area: three;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: four;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: five;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: six;
+    }
 }
 
 /* MEDIA QUERIES (LARGE) */
 @media screen and (min-width: 1024px){
+    #offer div{
+        display: grid;
+        grid-template-areas: "head head head"
+                             "one two three"
+                             "four five six";
+    }
 
+    #offer h2{
+        grid-area: head;
+    }
+
+    #offer section{
+        margin: 8px;
+    }
+
+    #offer section:first-of-type{
+        grid-area: one;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: two;
+    }
+
+    #offer section:nth-of-type(3){
+        grid-area: three;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: four;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: five;
+    }
+
+    #offer section:nth-of-type(2){
+        grid-area: six;
+    }
 }
