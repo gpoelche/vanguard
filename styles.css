@@ -293,6 +293,10 @@ header a{
     font-size: 1.15rem;
 }
 
+textarea{
+    resize: none;
+}
+
 input[type^=submit]{
     color: var(--white);
     background-color: var(--blue);
@@ -513,5 +517,69 @@ header svg{
 
     #offer section:nth-of-type(2){
         grid-area: six;
+    }
+
+    #contact form{
+       display: grid;
+       gap: 0.1rem;
+       grid-template-areas: "name-label email-label"
+                            "name-box email-box"
+                            "company-label industry-label"
+                            "company-box industry-box"
+                            "help-label submit"
+                            "help-box submit"
+    }
+
+    label[for="fullName"]{
+        grid-area: name-label;
+    }
+
+    .contact[id="fullName"]{
+        grid-area: name-box;
+    }
+
+    label[for="email"]{
+        grid-area: email-label;
+    }
+
+    .contact[id="email"]{
+        grid-area: email-box;
+    }
+
+    label[for="company"]{
+        grid-area: company-label;
+    }
+
+    .contact[id="company"]{
+        grid-area: company-box;
+    }
+
+    label[for="email"]{
+        grid-area: email-label;
+    }
+
+    .contact[id="email"]{
+        grid-area: email-box;
+    }
+
+    label[for="industry"]{
+        grid-area: industry-label;
+    }
+
+    .contact[id="industry"]{
+        grid-area: industry-box;
+    }
+
+    label[for="help"]{
+        grid-area: help-label;
+    }
+
+    textarea[id="help"]{
+        grid-area: help-box;
+    }
+
+    input[type^=submit]{
+        grid-area: submit;
+        height: 40%;
     }
 }
