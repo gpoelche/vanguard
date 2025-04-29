@@ -65,23 +65,23 @@ table {
 /* GLOBAL STYLES (MOBILE FIRST (SMALL) */
 @keyframes headerLoad{
     from{
-        translate: 0 -2vw;
+        transform: translate(0, -2vw);
         opacity: 0%;
     }
 
     to{
-        translate: 0 0;
+        transform: translate(0, 0);
         opacity: 100%;
     }
 }
 
 @keyframes svgBounce{
     from{
-        translate: 0 0;
+        transform: translate(0, 0);
     }
 
     to{
-        translate: 0 10px;
+        transform: translate(0, 10px);
     }
 }
 
@@ -130,7 +130,6 @@ header a{
     color: var(--blue);
     text-transform: uppercase;
 }
-
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
 #innovation{
@@ -205,13 +204,13 @@ header a{
     padding: 30px 20px;
     margin: 15px 20px;
     border-radius: 10px;
-    translate: 0 0;
-    transition: translate 0.5s;
+    transform: translate(0, 0);
+    transition: transform 0.5s;
 }
 
 #offer section:hover{
-    translate: 0 -5px;
-    transition: translate 0.5s;
+    transform: translate(0, -5px);
+    transition: transform 0.5s;
 }
 
 #offer section p{
@@ -408,7 +407,7 @@ header svg{
         flex-direction: row;
         position: absolute;
         right: 4rem;
-        translate: 0 0.5rem;
+        transform: translate(0, 0.5rem);
     }
 
     nav li{
@@ -514,10 +513,5 @@ header svg{
 
     #offer section:nth-of-type(2){
         grid-area: six;
-    }
-
-    form{
-        display: grid;
-        grid-template-columns: 1fr 1fr;
     }
 }
