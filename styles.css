@@ -77,11 +77,11 @@ table {
 
 @keyframes svgBounce{
     from{
-        transform: translate(0, 0);
+        transform: translate(0, 20px);
     }
 
     to{
-        transform: translate(0, 10px);
+        transform: translate(0, 40px);
     }
 }
 
@@ -189,6 +189,7 @@ p{
 h1{
     font-size: 2rem;
     font-weight: bold;
+    justify-content: center;
 }
 
 h2{
@@ -217,15 +218,15 @@ header{
     border-bottom: 3px solid var(--blue);
 }
 
-header div{
-    display: flex;
-    flex-direction: row;
-}
-
 header a{
     text-decoration: none;
     color: var(--blue);
     text-transform: uppercase;
+}
+
+header div{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
 }
 
 /* ADD TO "INNOVATION & INVESTMENT SECTION (Photo by Kevin Matos on Unsplash) */
@@ -442,8 +443,9 @@ body{
 }
 
 /* ADD FLOATING SVG LOGO BEFORE THE H1 */
-header svg{
+h1::before{
     content: "";
+    display: inline-block;
     left:-.5rem;
     width: 3.75rem;
     height: 3.75rem;
@@ -504,11 +506,8 @@ header svg{
         overflow: visible;
         display: grid;
         grid-template-columns: 1fr 1fr 1fr;
-    }
-
-    nav ul li a{
-        display:inline-block;
-        margin: 0;
+        position: relative;
+        top: 1.4rem;
     }
 
       label span, header input {
