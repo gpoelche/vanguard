@@ -85,6 +85,14 @@ table {
     }
 }
 
+/*I noticed my website had some weird white bar on the right and I wanted to fix this.*/
+/*I did some research and found that this code snippet worked. Gonna read a bit more on why it fixes it*/
+/*as well as why it happens. Just wanted to be honest!*/
+html, body{
+    width: 100%;
+    overflow-x: hidden;
+}
+
 p{
     line-height: 1.5;
 }
@@ -423,7 +431,8 @@ header svg{
         font-weight: bold;
     }
 
-    #results {
+    #results-data{
+        display: grid;
         grid-template-columns: 1fr 1fr;
     }
     .results-container {
